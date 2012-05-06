@@ -21,7 +21,7 @@ def puts_last_word(words)
       puts word 
 end
 
-# Takes in a full sentence and returns the sorted words.
+# Takes in a full sentence and returns the sorted words
 def sort_sentence(sentence)
     words = break_words(sentence)
     return sort_words(words)

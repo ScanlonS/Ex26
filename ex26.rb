@@ -1,0 +1,103 @@
+# This function will break up words for us.
+def break_words(stuff)
+    words = stuff.split(' ')
+    return words
+end
+
+# Sorts the words.
+def sort_words(words)
+    return words.sort()
+end
+
+# Prints the first word after popping it off.
+def puts_first_word(words)
+    word = words.shift()
+    puts word
+end
+
+# Prints the last word after popping it off.
+def puts_last_word(words)
+    word = words.pop(1)  #added in brachet
+      puts word 
+end
+
+# Takes in a full sentence and returns the sorted words.
+def sort_sentence(sentence)
+    words = break_words(sentence)
+    return sort_words(words)
+end
+
+# Puts the first and last words of the sentence.
+def puts_first_and_last(sentence)
+    words = break_words(sentence)
+    puts_first_word(words)
+    puts_last_word(words)
+end
+
+# Sorts the words then prints the first and last one.
+def puts_first_and_last_sorted(sentence)
+    words = sort_sentence(sentence)
+    puts_first_word(words)
+    puts_last_word(words)
+end
+
+
+puts "Let's practice everything."
+puts 'You\'d need to know \'bout escapes with \\ that do \n newlines and \t tabs.'
+
+poem = <<POEM
+\tThe lovely world
+with logic so firmly planted
+cannot discern \n the needs of love
+nor comprehend passion from intuition
+and requires an explantion
+\n\t\twhere there is none.
+POEM
+
+
+puts "--------------"
+puts poem
+puts "--------------"
+
+five = 10 + 2 - 3 - 5 + 1
+puts "This should be five: %s" % five
+
+def secret_formula(started)
+    jelly_beans = started * 500
+    jars = jelly_beans / 1000 #wrong back slash instead of divide
+    crates = jars / 100
+    return jelly_beans, jars, crates
+end
+
+start_point = 10000
+jelly_beans, jars, crates = secret_formula(start_point) #extra =
+
+puts "With a starting point of: %d" % start_point
+puts  "We\'d have %d beans, %d jars, and %d crates." %[jelly_beans, jars, crates]
+
+start_point = start_point / 10
+
+puts "We can also do that this way:"
+puts "We'd have %d beans, %d jars, and %d crates." % secret_formula(start_point)
+
+
+sentence = "All good things come to those who wait"
+puts
+puts sentence
+
+words = break_words(sentence)
+sorted_words = sort_words(words)
+
+puts_first_word(words) #all
+puts_last_word(words) #wait
+puts_first_word(sorted_words) #all
+puts_last_word(sorted_words) #who
+
+sorted_words = sort_sentence(sentence)
+puts
+print sorted_words 
+puts
+
+puts_first_and_last(sentence) #all wait
+
+puts_first_and_last_sorted(sentence) # all who

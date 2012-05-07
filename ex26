@@ -101,3 +101,4 @@ puts
 puts_first_and_last(sentence) #all wait
 
 puts_first_and_last_sorted(sentence) # all who
+p
